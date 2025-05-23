@@ -17,16 +17,16 @@ template<typename T>
 void Sort(T arr[], const int n);
 
 template<typename T>
-int Sum(T arr[], const int n);
+T Sum(T arr[], const int n);
 
 template<typename T>
 double Avg(T arr[], const int n);
 
 template<typename T>
-int minValueIn(T arr[], const int n);
+T minValueIn(T arr[], const int n);
 
 template<typename T>
-int maxValueIn(T arr[], const int n);
+T maxValueIn(T arr[], const int n);
 
 
 void ShiftLeft(int arr[], const int n, const int number_of_shifts);
@@ -164,27 +164,18 @@ void FillRand(double arr[], const int n, int minRand, int maxRand)
 	}
 }
 template<typename T>
-T Print(T arr[], const int n)
-{
-	for (T i = 0; i < n; i++)
-	{
-		cout << arr[i] << tab;
-	}
-	cout << endl;
-}
-
-/*void Print(double arr[], const int n)
+void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << tab;
 	}
 	cout << endl;
-}*/
+}
 template<typename T>
-T Sort(T arr[], const int n)
+void Sort(T arr[], const int n)
 {
-	for (T i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
 		for (int j = i + 1; j < n; j++)
 		{
@@ -197,21 +188,6 @@ T Sort(T arr[], const int n)
 		}
 	}
 }
-/*void Sort(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				double buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-}*/
 
 template<typename T>
 T Sum(T arr[], const int n)
@@ -225,7 +201,7 @@ T Sum(T arr[], const int n)
 }
 
 template<typename T>
-T Avg(T arr[], const int n)
+double Avg(T arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
 }
